@@ -1,0 +1,81 @@
+:host {
+  --text-font: 'Manrope', -apple-system, 'BlinkMacSystemFont', system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --text-font-size-m: normal 0.9375rem/1.5rem var(--text-font);
+  --text-01: #1b1f3b;
+  --text-02: rgba(27, 31, 59, 0.65);
+  --row-border-color: #ededed;
+  display: block;
+  padding: 1rem;
+}
+
+.reusable-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: black solid 1px ;
+
+  &__tr {
+    outline: none;
+    border-bottom: 1px solid var(--row-border-color);
+  }
+
+  &__th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: var(--text-font-size-m);
+    padding: 0.5rem 1rem;
+    vertical-align: middle;
+    height: 2.5rem;
+    color: var(--text-02);
+    background: inherit;
+  }
+
+  &__td {
+    font: var(--text-font-size-m);
+    padding: 1rem 1rem 0.875rem;
+    vertical-align: top;
+    word-wrap: break-word;
+    height: 3.4375rem;
+    color: var(--text-01);
+    background: inherit;
+  }
+
+  &__td,
+  &__th {
+    box-sizing: border-box;
+    text-align: left;
+
+    &_first {
+      position: relative;
+      padding-left: 0;
+      overflow: visible;
+
+      &:before {
+        right: 100%;
+      }
+    }
+
+    &_first:before,
+    &_last:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0.75rem;
+      height: 100%;
+      background: inherit;
+      border-top-left-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
+    }
+
+    &_last {
+      position: relative;
+      padding-right: 0;
+      overflow: visible;
+
+      &:before {
+        left: 100%;
+        transform: scaleX(-1);
+      }
+    }
+  }
+}

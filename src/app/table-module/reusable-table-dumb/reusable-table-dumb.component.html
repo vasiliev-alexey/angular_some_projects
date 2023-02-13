@@ -1,0 +1,60 @@
+<table class="reusable-table">
+  <thead>
+  <th class="reusable-table__th"
+      [attr.data-table-th]="columns[0].key"
+  >
+    {{columns[0].title}}
+  </th>
+  <th class="reusable-table__th"
+      [attr.data-table-th]="columns[1].key"
+  >
+    {{columns[1].title}}
+  </th>
+  <th class="reusable-table__th"
+      [attr.data-table-th]="columns[2].key"
+  >
+    {{columns[2].title}}
+  </th>
+  <th class="reusable-table__th"
+      [attr.data-table-th]="columns[3].key"
+  >
+    {{columns[3].title}}
+  </th>
+  </thead>
+  <tbody>
+
+  <tr class="reusable-table__tr">
+
+
+  <tr class="reusable-table__tr">
+    <td class="reusable-table__td reusable-table__td_first">
+
+      {{$any(data[0])['firstName']}}
+    </td>
+    <td class="reusable-table__td">
+      {{$any(data[0])['lastName']}}
+    </td>
+    <td class="reusable-table__td">
+      {{$any(data[0])['middleName']}}
+    </td>
+    <td class="reusable-table__td reusable-table__td_last">
+      {{$any(data[0])['birthDate']}}
+    </td>
+  </tr>
+
+  <tr class="reusable-table__tr">
+    <td class="reusable-table__td reusable-table__td_first">
+      {{data[1][columns[0].key || 'ddd']}}
+    </td>
+    <td class="reusable-table__td">
+      {{data[1][columns[1].key]}}
+    </td>
+    <td class="reusable-table__td">
+      {{data[1][columns[2].key]}}
+    </td>
+    <td class="reusable-table__td reusable-table__td_last">
+      {{data[1][columns[3].key]}}
+    </td>
+  </tr>
+  </tbody>
+</table>
