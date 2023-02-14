@@ -1,1 +1,9 @@
-<app-reusable-table-dumb [data]="commonUsers" [columns]="columns"></app-reusable-table-dumb>
+<input type="radio" id="user" (change)="onItemChange()"
+       name="contact" value="user" checked>
+<label for="user">user</label>
+
+<input type="radio" id="megaUsers" (change)="onItemChange()"
+       name="contact" value="megaUsers">
+<label for="megaUsers">megaUsers</label>
+
+<app-reusable-table-dumb [data]="isUser ? commonUsers : megaUsers" [columns]="columns"></app-reusable-table-dumb>
